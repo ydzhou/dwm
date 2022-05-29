@@ -1,0 +1,25 @@
+From 352f1c6665472499fb36f048bd80e690957009c3 Mon Sep 17 00:00:00 2001
+From: ydzhou <yd.zhou@me.com>
+Date: Thu, 12 May 2022 17:41:44 -0700
+Subject: [PATCH] Patch bar color background
+
+---
+ dwm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dwm.c b/dwm.c
+index a62bd1d..f9d6f50 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -760,7 +760,7 @@ drawbar(Monitor *m)
+ 
+ 	if ((w = m->ww - tw - x) > bh) {
+ 		if (m->sel) {
+-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
++			drw_setscheme(drw, scheme[m == SchemeNorm]);
+ 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+ 			if (m->sel->isfloating)
+ 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+-- 
+2.36.1
+
